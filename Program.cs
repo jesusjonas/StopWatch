@@ -1,16 +1,30 @@
 ﻿using System;
+using System.Threading;
 
-internal class Program
+namespace Stopwatch
 {
-    private static void Main(string[] args)
+    class Program
     {
-        Console.WriteLine("Hello, World!");
-    }
+        static void Main(string[] args)
+        {
+            Start();
 
-    static void Start()
-    {
-        int time = 10;
+        }
 
+        static void Start()
+        {
+            int time = 10;
+            int currentTime = 0;
+
+            while (currentTime != time)
+            {
+                // Console.Clear();
+                currentTime++;
+                Console.WriteLine(currentTime);
+                Thread.Sleep(1000);
+            }
+
+        }
 
     }
 
